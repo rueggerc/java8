@@ -1,0 +1,37 @@
+
+# Rows with duplicates
+https://stackoverflow.com/questions/306743/how-to-detect-duplicate-rows-in-a-sql-server-table
+select sensor_id, notes
+from 
+readings
+group by
+sensor_id, notes
+having 
+count(*) > 1
+
+# Managers not in employee table
+select * from manager
+where
+employee_id not in
+(select employee_id from employee)
+
+# Second highest salary
+select max(salary)
+from employee
+where salary < 
+(select max(salary) from employee)
+
+
+# Employees Who are not managers
+select e.*
+from employee e
+left join manager m on (e.employee_id = m.employee_id)
+where m.employee_id is null
+
+
+https://stackoverflow.com/questions/2077807/sql-query-to-return-differences-between-two-tables
+# Discrepancies
+select e.*, m.*
+from employee e
+full join manager m on (e.employee_id = m.employee_id)
+where e.employee_id is null or m.employee_id is null
