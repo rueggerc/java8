@@ -1,0 +1,20 @@
+{
+  "Records": [
+    {
+      "messageId": "19dd0b57-b21e-4ac1-bd88-01bbb068cb78",
+      "receiptHandle": "MessageReceiptHandle",
+      "body": "{  \"Records\": [    {      \"eventVersion\": \"2.1\",      \"eventSource\": \"aws:s3\",      \"awsRegion\": \"us-east-1\",      \"eventTime\": \"2020-06-02T18:03:24.346Z\",      \"eventName\": \"ObjectCreated:Put\",      \"userIdentity\": {        \"principalId\": \"AWS:AIDAJKQSI3XJFWKBHOHHE\"      },      \"requestParameters\": {        \"sourceIPAddress\": \"73.99.119.193\"      },      \"responseElements\": {        \"x-amz-request-id\": \"775C161E41C05E3C\",        \"x-amz-id-2\": \"xrLjnKkWKzkLPc4k36dcJjxY5bmFcQcVphO+tTCtzL5KcUru4+Fj/P4Azjex7VPNmTaCDFo7FJXO8OG4+7seH8Mom7Krf22g\"      },      \"s3\": {        \"s3SchemaVersion\": \"1.0\",        \"configurationId\": \"NzZjNzUyODMtZTRkMy00ZWEyLWE4YzAtMDdhNzVmMjIxZmZi\",        \"bucket\": {          \"name\": \"rueggerllc-test-bucket-from-java\",          \"ownerIdentity\": {            \"principalId\": \"A3HIUF3I0GVUD9\"          },          \"arn\": \"arn:aws:s3:::rueggerllc-sensordata\"        },        \"object\": {          \"key\": \"raspberrypi/sensor2.json\",          \"size\": 68,          \"eTag\": \"19d14f8a34a54cf86e67fc593793fe7b\",          \"sequencer\": \"005ED6947386AA22FB\"        }      }    }  ]}",
+      "attributes": {
+        "ApproximateReceiveCount": "1",
+        "SentTimestamp": "1523232000000",
+        "SenderId": "123456789012",
+        "ApproximateFirstReceiveTimestamp": "1523232000001"
+      },
+      "messageAttributes": {},
+      "md5OfBody": "7b270e59b47ff90a553787216d55d91d",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:aws:sqs:us-east-1:123456789012:MyQueue",
+      "awsRegion": "us-east-1"
+    }
+  ]
+}

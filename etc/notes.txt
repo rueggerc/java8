@@ -1,4 +1,9 @@
 
+# JSON Schema
+everit-org/json-schema
+
+
+
 # Rows with duplicates
 https://stackoverflow.com/questions/306743/how-to-detect-duplicate-rows-in-a-sql-server-table
 select sensor_id, notes

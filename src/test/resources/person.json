@@ -1,0 +1,9 @@
+{
+  "first_name" : "Sample" ,
+  "last_name" : "Name" ,
+  "age"  : 19,
+  "gender" : "Male",
+  "phone_number"  :  9080245591,
+  "email" : "samplle@gmail.com",
+  "password" : "mypassword"
+}
