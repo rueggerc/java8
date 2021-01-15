@@ -74,7 +74,9 @@ public class TestSupport {
       for (String line; (line = reader.readLine()) != null; ) {
         buffer.append(line);
       }
-      return buffer.toString();
+      String value = buffer.toString();
+      log.info("Read Resource:\n" + value);
+      return value;
     } catch (Exception e) {
       System.out.println("Error Reading File:" + fileName + "\n" + e);
       throw e;
