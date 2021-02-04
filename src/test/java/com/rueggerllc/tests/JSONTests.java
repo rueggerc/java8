@@ -1,15 +1,21 @@
 package com.rueggerllc.tests;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rueggerllc.tests.util.TestSupport;
 import org.apache.log4j.Logger;
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.loader.SchemaLoader;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Test;
 
 public class JSONTests {
 
   private static Logger logger = Logger.getLogger(JSONTests.class);
+
+
+
+
 
   @Test
   public void testCreateObject() throws Exception {
@@ -23,6 +29,8 @@ public class JSONTests {
   public void testReadObject() throws Exception {
     String personJSON = TestSupport.getResourceFileContents("/person.json");
     JSONObject person = new JSONObject(personJSON);
+
+
     logger.info(person);
   }
 
@@ -62,4 +70,28 @@ public class JSONTests {
     JSONObject person = new JSONObject(personJSON);
     return person;
   }
+
+  @Test
+  public void testPrettyPrintJSONString() throws Exception {
+    String jsonString = "{\"phonetype\":\"N95\",\"cat\":\"WP\"}";
+    logger.info("\n"+ prettyPrintJSON(jsonString));
+  }
+
+  @Test
+  public void testPrettyPrintJSONObject() throws Exception {
+    JSONObject jsonObject = new JSONObject();
+    jsonObject.put("Records:", "fred");
+    jsonObject.put("temperature:", 93.22);
+    logger.info("\n"+ prettyPrintJSON(jsonObject));
+  }
+
+  private static String prettyPrintJSON(String jsonString) throws Exception {
+    JSONObject jsonObject = new JSONObject(jsonString);
+    return prettyPrintJSON(jsonObject);
+  }
+
+  private static String prettyPrintJSON(JSONObject jsonObject) throws Exception {
+    return jsonObject.toString(2);
+  }
+
 }
