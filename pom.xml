@@ -12,9 +12,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
     </properties>
-
-
 
 
     <dependencies>
@@ -47,7 +46,35 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <app.server.url>http://dev.com</app.server.url>
+            </properties>
+        </profile>
+        <profile>
+            <id>production</id>
+            <properties>
+                <app.server.url>http://prod.com</app.server.url>
+            </properties>
+        </profile>
+
+    </profiles>
+
     <build>
+<!--        <filters>-->
+<!--            <filter>src/main/resources/filters/dev.properties</filter>-->
+<!--        </filters>-->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -65,7 +92,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
     <repositories>
